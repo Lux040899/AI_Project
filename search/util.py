@@ -1,10 +1,21 @@
 """
-COMP30024 Artificial Intelligence, Semester 1, 2021
-Project Part A: Searching
-
 This module contains some helper functions for printing actions and boards.
 Feel free to use and/or modify them to help you develop your program.
 """
+
+UPPER_TOKEN = ["R","P","S"]
+LOWER_TOKEN = ["r","p","s"]
+
+def tokenOwner(this):
+    """
+    Checks if token is owned by upper or lower player.
+    """
+    if this.tokenID in UPPER_TOKEN :
+        return "Upper" 
+    elif this.tokenID in LOWER_TOKEN:
+        return "Lower"
+
+
 
 def print_slide(t, r_a, q_a, r_b, q_b, **kwargs):
     """
@@ -54,12 +65,12 @@ def print_board(board_dict, message="", compact=True, ansi=False, **kwargs):
     Example:
 
         >>> board_dict = {
-        ...     ( 0, 0): "hello",
-        ...     ( 0, 2): "world",
-        ...     ( 3,-2): "(p)",
-        ...     ( 2,-1): "(S)",
-        ...     (-4, 0): "(R)",
-        ... }
+             ( 0, 0): "hello",
+             ( 0, 2): "world",
+             ( 3,-2): "(p)",
+             ( 2,-1): "(S)",
+             (-4, 0): "(R)",
+        }
         >>> print_board(board_dict, "message goes here", ansi=False)
         # message goes here
         #              .-'-._.-'-._.-'-._.-'-._.-'-.
@@ -149,4 +160,4 @@ def print_board(board_dict, message="", compact=True, ansi=False, **kwargs):
     multiline_message = "\n# ".join(message.splitlines())
     # fill in the template to create the board drawing, then print!
     board = template.format(multiline_message, *cells)
-    print(board, **kwargs)
+    # print(board, **kwargs)
