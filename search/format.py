@@ -10,5 +10,4 @@ def format_dict(data):
         board_dict[(cell[1], cell[2])] = cell[0].upper()
     for cell in lower:
         board_dict[(cell[1], cell[2])] = cell[0]
-    print(board_dict)
     return board_dict

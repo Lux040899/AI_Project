@@ -1,6 +1,6 @@
 class Player
 
-def __init__(this, tokens, tokenCount, )
+def __init__(this, tokens)
 
 
 

@@ -13,6 +13,7 @@ import json
 # then import from them like this:
 from search.util import print_board, print_slide, print_swing
 from search.token import Token
+from searh.format import format_dict
 
 def main():
 
@@ -23,7 +24,11 @@ def main():
         print("usage: python3 -m search path/to/input.json", file=sys.stderr)
         sys.exit(1)
 
+    
+    board_dict = format_dict(data)
 
+
+#
 
     
 
