@@ -161,3 +161,21 @@ def print_board(board_dict, message="", compact=True, ansi=False, **kwargs):
     # fill in the template to create the board drawing, then print!
     board = template.format(multiline_message, *cells)
     # print(board, **kwargs)
+
+def tokenWinner(token1, token2):
+    """
+    determines if two tokens are capable of killing each other
+    """
+    if (token1 == "r" or token1 == "R" or token2 == "r" or token2 == "R") and
+     (token1 == "s" or token1 == "S" or token2 == "s" or token2 == "S"):
+        return 1
+    elif (token1 == "s" or token1 == "S" or token2 == "s" or token2 == "S") and
+     (token1 == "p" or token1 == "P" or token2 == "p" or token2 == "P"):
+        return 1
+    elif (token1 == "p" or token1 == "p" or token2 == "p" or token2 == "p") and
+     (token1 == "r" or token1 == "R" or token2 == "r" or token2 == "R"):
+        return 1
+    else:
+        return 0
+
+
