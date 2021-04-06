@@ -50,16 +50,20 @@ class Board:
 
         path = [visited[-1]]
         prdscr = predecessor[-1]
-        while(prdscr != (-100, -100)):
+        while(prdscr != (-100,-100)):
             path.insert(0, prdscr)
             #find index of prdscr in visited
             i = visited.index(prdscr)
             prdscr = predecessor[i]
 
-            print(path)
+        this.printOutput(path)
         
         return 0
                 
+    def printOutput(this, path):
+        for i in range(len(path)-1):
+            print(f"Turn {i+1}: SLIDE from {path[i]} to {path[i+1]}")
+
     def possibleMoves(this, s):
         
         """

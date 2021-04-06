@@ -8,10 +8,10 @@ def format_dict(data):
     board_dict = {}
     blocked = []
     for cell in upper:
-        board_dict[(cell[1], cell[2])] = cell[0].upper()
+        board_dict[(cell[1],cell[2])] = cell[0].upper()
     for cell in lower:
-        board_dict[(cell[1], cell[2])] = cell[0]
+        board_dict[(cell[1],cell[2])] = cell[0]
     for cell in block:
-        blocked.append((cell[1], cell[2]))
-        
+        blocked.append((cell[1],cell[2]))
+
     return (board_dict, blocked)
