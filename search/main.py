@@ -14,6 +14,9 @@ import json
 # then import from them like this:
 from search.util import print_board, print_slide, print_swing
 from search.format import format_dict
+from search.token import Token
+#from search.board import Board
+
 def main():
     try:
         with open(sys.argv[1]) as file:
@@ -21,9 +24,27 @@ def main():
     except IndexError:
         print("usage: python3 -m search path/to/input.json", file=sys.stderr)
         sys.exit(1)
-    print(data)
-    board_dict = format_dict(data)
-    print_board(board_dict, "hello")
+    
+    board_dict, blocked = format_dict(data)
+    
+    upper = []
+    lower = []
+    
+    for key in board_dict:
+        if board_dict[key].isupper():
+            upper.append(Token(key, board_dict[key]))
+        else:
+            lower.append(Token(key, board_dict[key]))
+        
+    """for tkn in upper:
+        print(tkn.coordinate)"""
+
+    #simulationBoard = Board(upper, lower, blocked)
+    
+    
+    
+    
+    
     # TODO:
     # Find and print a solution to the board configuration described
     # by `data`.

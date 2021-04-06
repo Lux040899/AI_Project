@@ -6,9 +6,13 @@ def format_dict(data):
     lower = data['lower']
     block = data['block']
     board_dict = {}
+    blocked = []
     for cell in upper:
         board_dict[(cell[1], cell[2])] = cell[0].upper()
     for cell in lower:
         board_dict[(cell[1], cell[2])] = cell[0]
+    for cell in block:
+        blocked.append((cell[1], cell[2]))
+
     print(board_dict)
-    return board_dict
+    return (board_dict, blocked)
