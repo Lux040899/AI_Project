@@ -15,7 +15,7 @@ import json
 from search.util import print_board, print_slide, print_swing
 from search.format import format_dict
 from search.token import Token
-#from search.board import Board
+from search.board import Board
 
 def main():
     try:
@@ -36,10 +36,8 @@ def main():
         else:
             lower.append(Token(key, board_dict[key]))
         
-    """for tkn in upper:
-        print(tkn.coordinate)"""
-
-    #simulationBoard = Board(upper, lower, blocked)
+    simulationBoard = Board(upper, lower, blocked)
+    simulationBoard.startGame()
     
     
     
